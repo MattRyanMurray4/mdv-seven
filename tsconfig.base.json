@@ -15,7 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mines/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@mines/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@mines/core-data": ["libs/core-data/src/index.ts"],
+      "@mines/core-state": ["libs/core-state/src/index.ts"],
+      "@mines/material": ["libs/material/src/index.ts"],
+      "@mines/theme": ["libs/theme/src/index.ts"],
+      "@mines/ui-library": ["libs/ui-library/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
