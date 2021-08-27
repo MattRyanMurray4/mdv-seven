@@ -3,13 +3,18 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { WildComponent } from './wild/wild.component';
-
+import { MaterialModule } from '@mines/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 @NgModule({
-  imports: [CommonModule],
-  declarations: [
-    LoginComponent,
-    ToolbarComponent,
-    WildComponent
+  imports: [
+    CommonModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
   ],
+  declarations: [LoginComponent, ToolbarComponent, WildComponent],
+  exports: [ToolbarComponent, LoginComponent, WildComponent],
 })
 export class UiLibraryModule {}

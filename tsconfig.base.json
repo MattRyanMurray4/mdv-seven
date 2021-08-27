@@ -14,6 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "strictPropertyInitialization": false,
     "paths": {
       "@mines/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@mines/core-data": ["libs/core-data/src/index.ts"],

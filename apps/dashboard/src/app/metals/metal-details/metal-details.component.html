@@ -1,1 +1,76 @@
-<p>metal-details works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title *ngIf="currentMetal.id; else createNew">
+      <h1>Update {{ originalName }}</h1>
+    </mat-card-title>
+    <ng-template #createNew>
+      <h1>Submit a New Metal</h1>
+    </ng-template>
+  </mat-card-header>
+  <form
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="saveForm(formDirective)"
+  >
+    <mat-card-content>
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="Name"
+          formControlName="name"
+          type="text"
+          name="name"
+        />
+        <mat-error *ngIf="form.get('name')">Required Field</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Classification</mat-label>
+        <input
+          matInput
+          placeholder="Classification"
+          formControlName="classification"
+          type="text"
+          name="classification"
+        />
+        <mat-error *ngIf="form.get('classification')">Required Field</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Value-Per-Ounce</mat-label>
+        <input
+          matInput
+          placeholder="Value-Per-Ounce"
+          formControlName="valuePerOunce"
+          type="text"
+          name="valuePerOunce"
+        />
+        <mat-error *ngIf="form.get('valuePerOunce')">Required Field</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Melting-Point</mat-label>
+        <input
+          matInput
+          placeholder="Melting-Point"
+          formControlName="meltingPoint"
+          type="number"
+          name="meltingPoint"
+        />
+        <mat-error *ngIf="form.get('meltingPoint')">Required Field</mat-error>
+      </mat-form-field>
+      <section>
+        <mat-checkbox
+          class="mat-checkbox"
+          formControlName="preciousMetal"
+          placeholder="Precious-Metal"
+          >Precious-Metal</mat-checkbox
+        >
+      </section>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button [disabled]="form.invalid">
+        {{ currentMetal.id ? 'Submit' : 'Update' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

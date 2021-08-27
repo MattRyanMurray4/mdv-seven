@@ -1,1 +1,17 @@
-<p>metals works!</p>
+<div class="container">
+  <div class="col-50" layout="row" layout-align="center center">
+    <mines-metals-list
+      [metals]="metals$ | async"
+      (selected)="selectMetal($event)"
+      (deleted)="deleteMetal($event)"
+    ></mines-metals-list>
+  </div>
+  <div class="col-50" layout="row" layout-align="center center">
+    <mines-metal-details
+      [form]="form"
+      [metal]="selectedMetal$ | async"
+      (saved)="saveMetal($event)"
+      (cancelled)="cancel()"
+    ></mines-metal-details>
+  </div>
+</div>
